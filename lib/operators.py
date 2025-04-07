@@ -133,7 +133,3 @@ def deconvolve(XSet: list, func1, func2):
         external += step
 
     return np.linspace(XSet[0], XSet[len(XSet) - 1], len(deconvolveSet)), deconvolveSet
-
-# linear curve is the method that describes curve: f(x) = kx + b.
-def linearCurve(k: float, b: float, x):
-    return k * np.float64(x) + b
