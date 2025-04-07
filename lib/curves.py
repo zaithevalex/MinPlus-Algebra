@@ -1,7 +1,7 @@
 import numpy as np
 
 # linearCurve is the method that describes curve: f(x) = kx + b.
-def linearCurve(k: float, b: float, x):
+def linearCurve(x, k: float = 1.0, b: float = 1.0):
     return k * np.float64(x) + b
 
 # betaTransferCurve is the method that describes curve f(x):

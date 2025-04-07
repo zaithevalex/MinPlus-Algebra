@@ -7,14 +7,15 @@ import scipy.integrate as spi
 def AddConst(XSet: list, func = None, YSet: list = None, const = 0.):
     if func is not None:
         YSet = np.array([(func(x) + const) for x in XSet])
-        return np.linspace(XSet[0], XSet[len(XSet) - 1], len(YSet)), YSet
+
+        return XSet, ConvertDataSetToLinearFunction(np.linspace(XSet[0], XSet[len(XSet) - 1], len(YSet)), YSet)
     elif YSet is not None:
         for i in range(len(YSet)):
             YSet[i] += const
 
-        return ConvertDataSetToLinearFunction(np.linspace(XSet[0], XSet[len(XSet) - 1], len(YSet)), YSet)
+        return np.linspace(XSet[0], XSet[len(XSet) - 1], len(YSet)), YSet
     else:
-        return None
+        return None, None
 
 # ConvertDataSetToLinearFunction converts data from an array(XSet, YSet) to a piecewise linear function (f(x) = kx + b).
 def ConvertDataSetToLinearFunction(XSet: list, YSet: list):
