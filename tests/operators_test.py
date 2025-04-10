@@ -22,6 +22,26 @@ def testBetaTransferCurve2(x):
 def testLinearCurve(x):
     return 1 * np.float64(x) + 1
 
+def testPiecewiseCurve1(x):
+    if x <= 0:
+        return 1
+    elif x >= 0 and x <= 2:
+        return 1 + x
+    elif x > 2 and x <= 20.15:
+        return 3 + 0.25 * (x - 2)
+
+    return 15
+
+def testPiecewiseCurve2(x):
+    if x <= 3:
+        return 0
+    elif x > 3 and x <= 5:
+        return (x - 3)
+    elif x > 5 and x <= 12:
+        return 2
+
+    return 7 + 0.5 * (x - 12)
+
 def testSquareCurve1(x):
     return 1 * np.float64(x * x)
 
