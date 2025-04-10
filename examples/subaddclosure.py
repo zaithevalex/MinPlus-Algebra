@@ -5,11 +5,13 @@ import numpy as np
 
 defArea = np.linspace(0, 20, 1000)
 
+plt.figure(figsize=(10, 5))
 plt.subplot(1, 2, 1)
 plt.legend("dataset convolution")
 plt.grid()
 plt.xlabel('x')
 plt.ylabel('y(x)')
+
 plt.plot(defArea, np.array([curves.squareCurve(x, 1, 0, 0) for x in defArea]),
          color = 'blue',
          label = 'square curve')
