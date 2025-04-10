@@ -10,7 +10,7 @@ piecewiseCurve2YSet = np.array([tests.operators_test.testPiecewiseCurve2(x) for 
 
 plt.figure(figsize=(10, 5))
 plt.subplot(1, 2, 1)
-plt.legend("datasets deconvolution")
+plt.legend()
 plt.grid()
 plt.xlabel('x')
 plt.ylabel('y(x)')
@@ -22,7 +22,7 @@ x, y = ops.MinPlusDeconvolution(defArea, YSet1 = piecewiseCurve1YSet, YSet2 = pi
 plt.plot(x, y, color = 'red', label = 'minplus-deconvolution')
 
 plt.subplot(1, 2, 2)
-plt.legend("functions deconvolution")
+plt.legend()
 plt.grid()
 plt.xlabel('x')
 plt.ylabel('y(x)')

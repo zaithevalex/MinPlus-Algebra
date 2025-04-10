@@ -7,7 +7,7 @@ defArea = np.linspace(0, 20, 1000)
 
 plt.figure(figsize=(10, 5))
 plt.subplot(1, 2, 1)
-plt.legend("datasets convolution")
+plt.legend()
 plt.grid()
 plt.xlabel('x')
 plt.ylabel('y(x)')
@@ -25,7 +25,7 @@ x, y = ops.MinPlusConvolution(defArea,
 plt.plot(x, y, color = 'red', label = 'minPlus-convolution')
 
 plt.subplot(1, 2, 2)
-plt.legend("functions convolution")
+plt.legend()
 plt.grid()
 plt.xlabel('x')
 plt.ylabel('y(x)')

@@ -7,7 +7,7 @@ defArea = np.linspace(0, 20, 1000)
 
 plt.figure(figsize=(10, 5))
 plt.subplot(1, 2, 1)
-plt.legend("dataset convolution")
+plt.legend()
 plt.grid()
 plt.xlabel('x')
 plt.ylabel('y(x)')
@@ -27,7 +27,7 @@ x, y = ops.SubAddClosure(defArea,
 plt.plot(x, y, color = 'red', label = '2nd degree sub-add closure')
 
 plt.subplot(1, 2, 2)
-plt.legend("function convolution")
+plt.legend()
 plt.grid()
 plt.xlabel('x')
 plt.ylabel('y(x)')
