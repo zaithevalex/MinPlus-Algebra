@@ -150,6 +150,27 @@ class TestOperators(unittest.TestCase):
             except ValueError as e:
                 self.assertEqual(str(e), case.expectedInterp1d)
 
+    def test_ConvertFunctionToDataSet(self):
+        class TestConvertFunctionToDataSet:
+            def __init__(self, XSet: list, func, expectedXSet, expectedYSet):
+                self.XSet = XSet
+                self.func = func
+                self.expectedXSet = expectedXSet
+                self.expectedYSet = expectedYSet
+
+        cases = []
+        cases.append(TestConvertFunctionToDataSet(
+            [1., 2., 3., 4, 5.],
+            testLinearCurve,
+            [1., 2., 3., 4., 5.],
+            [2., 3., 4., 5., 6.],
+        ))
+
+        for case in cases:
+            val1, val2 = ops.ConvertFunctionToDataSet(case.XSet, case.func)
+            self.assertTrue(np.array_equal(val1, case.expectedXSet))
+            self.assertTrue(np.array_equal(val2, case.expectedYSet))
+
     def test_L1Norm(self):
         class TestL1NormClass:
             def __init__(self, XSet: list, func1, func2, expectedL1Norm):
