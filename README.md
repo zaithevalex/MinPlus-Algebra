@@ -68,6 +68,20 @@ Next, you can see an example of the deconvolution of two curves: green and blue.
 
 ![image.png](images/deconvolutions_curves.png)
 
+**An important note about the deconvolution:**
+
+The deconvolution searches for supremums only when u >= 0. If you need to build an inverse convolution on the entire
+set, but at the same time select only a part of it (on the graph), for example, on the set [5, +inf), then use the
+following function from the matplotlib library to do this:
+
+```python
+X = np.linspace(-100, 100, 10000)
+f = mpalgebra.MinPlusDeconvolution(defArea, func1 = your_curve1, func2 = your_curve2)
+
+plt.xlim(5)
+plt.plot(X, np.array([f(x) for x in range X]), color = 'red', label = 'deconvolution')
+```
+
 ### Other operations:
 
 The secondary operations available in the library are the **search for the L1 norm**, **minimizing it within the specified limits**, and **adding a constant to a function or dataset**.
