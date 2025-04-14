@@ -28,8 +28,6 @@ pip uninstall minplus-algebra
 
 ## Available operations in the library
 
-## In general
-
 The library is implemented for the ability to perform convolutional operations for both datasets and functions of the form **f(x)**. The library has the ability to convert a dataset into a piecewise linear function, or vice versa, a piecewise linear function into a dataset. In the directory with **examples**, you can find an example of implementing convolutional operations for datasets and functions. You can't collapse a function with a dataset and a dataset with a function, first of all, convert one to the other using the library functions.
 
 ### Convolution
@@ -91,5 +89,5 @@ The secondary operations available in the library are the **search for the L1 no
 You can run the functional tests to check if you installation succeeded. We use the [PyCharm](https://www.jetbrains.com/pycharm/) plugin to run the Unit tests or enter the command in the console:
 
 ```powershell
-python -m unittest tests\operators_test.py
+python -m unittest src/tests/operators_test.py
 ```
