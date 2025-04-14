@@ -1,19 +1,17 @@
-import lib.curves as curves
-import lib.operators as ops
 import matplotlib.pyplot as plt
+import minplus_algebra as mpalgebra
 import numpy as np
-import tests.operators_test as tests
 
 _, axs = plt.subplots(1, 2, figsize = (10, 5))
 
 defArea = np.linspace(0, 50, 1000)
-piecewiseCurve1YSet = np.array([tests.testPiecewiseCurve1(x) for x in defArea])
-piecewiseCurve2YSet = np.array([tests.testPiecewiseCurve2(x) for x in defArea])
+piecewiseCurve1YSet = np.array([mpalgebra.testPiecewiseCurve1(x) for x in defArea])
+piecewiseCurve2YSet = np.array([mpalgebra.testPiecewiseCurve2(x) for x in defArea])
 
 axs[0].plot(defArea, piecewiseCurve1YSet, label='piecewise curve 1', color='blue')
 axs[0].plot(defArea, piecewiseCurve2YSet, color = 'green', label = 'piecewise curve 2')
 
-x, y = ops.MinPlusDeconvolution(defArea, YSet1 = piecewiseCurve1YSet, YSet2 = piecewiseCurve2YSet)
+x, y = mpalgebra.MinPlusDeconvolution(defArea, YSet1 = piecewiseCurve1YSet, YSet2 = piecewiseCurve2YSet)
 axs[0].plot(x, y, color = 'red', label = 'minplus-deconvolution')
 
 axs[0].set_title("datasets deconvolution")
@@ -29,7 +27,7 @@ axs[1].plot(defArea, piecewiseCurve2YSet,
          color = 'green',
          label = 'piecewise curve 2')
 
-f = ops.MinPlusDeconvolution(defArea, func1 = tests.testPiecewiseCurve1, func2 = tests.testPiecewiseCurve2)
+f = mpalgebra.MinPlusDeconvolution(defArea, func1 = mpalgebra.testPiecewiseCurve1, func2 = mpalgebra.testPiecewiseCurve2)
 axs[1].plot(defArea, np.array([f(x) for x in defArea]), color = 'red', label = 'minPlus-deconvolution')
 
 axs[1].set_title("functions deconvolution")

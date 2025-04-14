@@ -1,4 +1,4 @@
-import lib.operators as ops
+import src.lib.operators as ops
 import numpy as np
 import pandas as pd
 import scipy.integrate as spi
