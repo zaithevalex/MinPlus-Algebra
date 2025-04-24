@@ -1,6 +1,6 @@
 # MinPlus-Algebra
 
-MinPlus-Algebra is a universal and powerful library for the ability to switch from nonlinear to linear systems and perform convolutional operations. The addition operation is replaced by the infimum operation. The multiplication operation is replaced by the addition operation. This approach is actively used in [Network Calculus](https://en.wikipedia.org/wiki/Network_calculus).
+MinPlus-Algebra is a universal and powerful library for the ability to switch from nonlinear to linear systems and perform convolutional operations. The addition operation is replaced by the infimum operation. The multiplication operation is replaced by the addition operation. This approach is actively used in [Network Calculus](https://en.wikipedia.org/wiki/Network_calculus)(you can also find RTC - Real Time Calculus).
 
 In MinPlus algebra, there are 3 basic operations for processing functions and combinations of functions: Convolution, Sub-Add Closure and Deconvolution. You can see examples of function handling below.
 
